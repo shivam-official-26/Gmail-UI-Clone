@@ -1,11 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gmail Clone</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-[#F6F8FC] m-0 p-0 box-border overflow-hidden">
+    <!-- Header starts here -->
+    <header
+      class="bg-[#F6F8FC] w-full h-[64px] flex justify-around items-center"
+    >
+      <div class="flex justify-center items-center gap-4">
+        <div class="text-xl">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <div>
+          <img
+            class="h-10 w-28"
+            src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r5.png"
+            alt="gmail logo"
+          />
+        </div>
+      </div>
+
+      <!-- search box -->
+      <div
+        class="h-[48px] flex items-center p-[14] rounded-full bg-[#E5EBF5] w-[704px] ml-14"
+      >
+        <i class="fa-solid fa-magnifying-glass m-5 text-lg"></i>
+        <input
+          class="text-[16px] text-[#333333] ml-[14px] border-none outline-none bg-transparent w-full placeholder:text-gray-600"
+          type="search"
+          placeholder="Search mail"
+        />
+        <div class="text-xl mr-5">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </div>
+      </div>
+      <!-- search box End -->
+
+      <div class="flex flex-row gap-7 text-xl">
+        <div>
+          <a href="#"><i class="fa-solid fa-question"></i></a>
+        </div>
+        <div>
+          <a href="#"><i class="fa-solid fa-gear"></i></a>
+        </div>
+        <div>
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <div
+          class="w-7 h-7 bg-orange-600 text-center rounded-full font-semibold text-white text-lg"
+        >
+          <a href="#">S</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Section Starts Here -->
+
+    <main class="flex">
+      <div class="w-64 h-full bg-[#F6F8FC]">
+        <div
+          class="bg-[#C2E7FF] h-[45px] w-[160px] flex justify-center items-center gap-10 rounded-2xl ml-1 p-3 mt-3 text-base font-semibold"
+        >
+          <i class="fa-solid fa-pen"></i>Compose
+        </div>
+
+        <div class="w-full h-auto">
+          <div
+            class="bg-[#D3E3FD] hover:bg-gray-200 flex justify-around items-center rounded-r-2xl mt-5"
+          >
+            <i class="fa-regular fa-image"></i>
+            <p class="font-medium mr-20">Inbox</p>
+            <p class="font-medium">422</p>
+          </div>
+          <div
+            class="hover:bg-gray-200 flex justify-around items-center rounded-r-2xl"
+          >
+            <i class="fa-regular fa-star"></i>
+            <p class="font-medium mr-32">Starred</p>
+          </div>
+          <div
+            class="hover:bg-gray-200 flex justify-around items-center rounded-r-2xl"
+          >
+            <i class="fa-regular fa-clock"></i>
+            <p class="font-medium mr-[117px]">Snoozed</p>
+          </div>
+          <div
+            class="hover:bg-gray-200 flex justify-around items-center rounded-r-2xl"
+          >
+            <i class="fa-regular fa-paper-plane"></i>
+            <p class="font-medium mr-[148px]">Sent</p>
+          </div>
+          <div
+            class="hover:bg-gray-200 flex justify-around items-center rounded-r-2xl"
+          >
+            <i class="fa-regular fa-message"></i>
+            <p class="font-medium mr-36">Draft</p>
+          </div>
+          <div
+            class="hover:bg-gray-200 flex justify-around items-center rounded-r-2xl"
+          >
+            <i class="fa-solid fa-circle-down"></i>
+            <p class="font-medium mr-36">More</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="w-full flex justify-between items-center mt-7">
+            <p class="ml-4 font-semibold text-lg">Labels</p>
+            <i class="fa-solid fa-plus hover:bg-gray-200"></i>
+          </div>
+          <div
+            class="mt-2 w-full flex items-center gap-5 hover:bg-gray-200 rounded-r-xl"
+          >
+            <i class="fa-solid fa-tag ml-4"></i>
+            <p>PW SKILLS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-full w-[814px] bg-white ml-2 mt-5">
+        <div
+          id="main_header1"
+          class="flex h-[48] bg-white items-center justify-between "
+        >
+          <div class="flex gap-8">
+            <div class="flex gap-2">
+                <a href="#"><i class="fa-regular fa-square"></i></a>
+                    <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+            </div>
+            <a href="#"> <i class="fa-solid fa-arrows-rotate"></i></a>
+            <a href="#"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
+          </div>
+          <div class="flex items-center gap-3">
+            <p>1-50 of 484</p>
+            <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+            <a href="#"></a><i class="fa-solid fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div id="main_header_2" class="flex justify-between mt-8">
+            <div class="flex gap-5 items-center text-blue-600">
+                <i class="fa-regular fa-image"></i>
+                <p>Primary</p>
+            </div>
+            <div class="flex gap-5 items-center">
+                <i class="fa-solid fa-tag"></i>
+                <p>Promotions</p>
+            </div>
+            <div class="flex gap-5 items-center">
+                <i class="fa-solid fa-user-group"></i>
+                <p>Group</p>
+            </div>
+        </div>
+        <div class="w-52 h-1 border-b-4 border-blue-500 mt-2"></div>
+<div class="overflow-y-scroll mt-2">
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        <div class="mt-1 flex justify-between items-center hover:border-[1px] hover:border-gray-400 p-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-square text-gray-300"></i>
+                <i class="fa-regular fa-star  text-gray-300"></i>
+                <p class="font-semibold text-black ">PW Skills</p>
+            </div>
+            <p class="font-semibold">Join the doubt clearing class of Full stack web development</p>
+            <p class="font-semibold hover:hidden block">2 Apr</p>
+        </div>
+        </div>
+        </div>
+<div class="w-auto h-full bg-[#F6F8FC] ml-12 mt-3 flex flex-col gap-5">
+      <div class="p-3 rounded-full hover:bg-gray-200 h-10 w-10 ">
+        <img class="h-5 w-6" src="https://www.gstatic.com/companion/icon_assets/calendar_2020q4_2x.png" alt="">
+    </div>
+    <div class="p-3 rounded-full hover:bg-gray-200 h-10 w-10">
+        <img class="h-5 w-6" src="https://www.gstatic.com/companion/icon_assets/keep_2020q4v3_2x.png" alt="">
+    </div>
+    <div class="p-3 rounded-full hover:bg-gray-200 h-10 w-10">
+        <img class="h-5 w-6" src="https://www.gstatic.com/companion/icon_assets/tasks_2021_2x.png" alt="">
+    </div>
+    <div class="p-3 rounded-full hover:bg-gray-200 h-10 w-10">
+        <img class="h-5 w-6" src="https://www.gstatic.com/companion/icon_assets/contacts_2022_2x.png" alt="">
+    </div>
+    <div class="flex flex-col gap-24 mt-8">
+    <i class="fa-solid fa-plus ml-3"></i>
+    <i class="fa-solid fa-angle-right ml-3"></i></div>
     
-</body>
+</div>
+    </main>
+  </body>
 </html>
